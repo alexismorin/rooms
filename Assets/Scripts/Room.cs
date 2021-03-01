@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Room : MonoBehaviour
-{
+public class Room : MonoBehaviour {
     int tick = 0;
 
 
@@ -14,36 +13,32 @@ public class Room : MonoBehaviour
     GameObject[] allowedOutputs;
 
 
-    public void Init(Generator generator)
-    {
+    public void Init(Generator generator) {
         StartCoroutine("Generate", generator);
     }
 
-    public IEnumerator Generate(Generator generator)
-    {
+    public IEnumerator Generate(Generator generator) {
 
-        foreach (Transform child in transform)
-        {
+        foreach (Transform child in transform) {
 
             // look for outputs in the room
-            if (child.name == "DoorFrame")
-            {
+            if (child.name == "DoorFrame") {
+
+                generator.ResetQA();
+
                 // create rooms if we can
-                if (generator.currentRoomCount < generator.maxRooms)
-                {
+                if (generator.currentRoomCount < generator.maxRooms) {
 
                     bool success = false;
 
                     // copy room order index 
                     int[] shuffledRooms = new int[allowedOutputs.Length];
-                    for (int x = 0; x < shuffledRooms.Length; x++)
-                    {
+                    for (int x = 0; x < shuffledRooms.Length; x++) {
                         shuffledRooms[x] = x;
 
                     }
                     // and shuffle
-                    for (int t = 0; t < shuffledRooms.Length; t++)
-                    {
+                    for (int t = 0; t < shuffledRooms.Length; t++) {
                         int tmp = shuffledRooms[t];
                         int r = Random.Range(t, shuffledRooms.Length);
                         shuffledRooms[t] = shuffledRooms[r];
@@ -51,11 +46,9 @@ public class Room : MonoBehaviour
                     }
 
                     // we go through the rooms, trying them all to see if it would work
-                    for (int i = 0; i < allowedOutputs.Length; i++)
-                    {
+                    for (int i = 0; i < allowedOutputs.Length; i++) {
 
-                        if (!success)
-                        {
+                        if (!success) {
                             GameObject instance = Instantiate(allowedOutputs[shuffledRooms[i]], child.position, child.rotation);
                             instance.name = allowedOutputs[shuffledRooms[i]].name;
 
@@ -63,19 +56,16 @@ public class Room : MonoBehaviour
                             Bounds testInstanceBounds = instance.GetComponent<MeshRenderer>().bounds;
                             testInstanceBounds.Expand(-boundShrinkSize);
 
-                            for (int j = 0; j < generator.roomBounds.Count; j++)
-                            {
+                            for (int j = 0; j < generator.roomBounds.Count; j++) {
                                 Bounds testRoomBounds = generator.roomBounds[j];
                                 testRoomBounds.Expand(-boundShrinkSize);
 
-                                if (testInstanceBounds.Intersects(testRoomBounds))
-                                {
+                                if (testInstanceBounds.Intersects(testRoomBounds)) {
                                     doesIntersect = true;
                                 }
                             }
 
-                            if (!doesIntersect)
-                            {
+                            if (!doesIntersect) {
                                 child.name += "Cha";
                                 generator.roomBounds.Add(instance.GetComponent<MeshRenderer>().bounds);
                                 generator.currentRoomCount++;
@@ -84,8 +74,7 @@ public class Room : MonoBehaviour
                                 success = true;
                             }
 
-                            if (doesIntersect)
-                            {
+                            if (doesIntersect) {
                                 Destroy(instance);
                             }
 
@@ -94,16 +83,13 @@ public class Room : MonoBehaviour
 
                     yield return null;
 
-                    if (!success)
-                    {
+                    if (!success) {
                         // no rooms fit in here, we need to cap the output
                         GameObject cap = Instantiate(generator.capRooms[Random.Range(0, generator.capRooms.Length)], child.position, child.rotation);
                         cap.transform.parent = this.transform;
                         Destroy(child.gameObject);
                     }
-                }
-                else
-                {
+                } else {
                     // no more rooms allowe, cap them off with closets or the like
                     GameObject cap = Instantiate(generator.capRooms[Random.Range(0, generator.capRooms.Length)], child.position, child.rotation);
                     cap.transform.parent = this.transform;
@@ -115,14 +101,11 @@ public class Room : MonoBehaviour
 
 
         // Here we fix errors, yuck
-        foreach (Transform child in transform)
-        {
+        foreach (Transform child in transform) {
 
             // look for outputs in the room
-            if (child.name == "DoorFrame")
-            {
-                if (child.childCount > 1)
-                {
+            if (child.name == "DoorFrame") {
+                if (child.childCount > 1) {
                     Destroy(child.GetChild(0));
                 }
             }
