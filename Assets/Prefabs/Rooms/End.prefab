@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5685993628643467465}
   - component: {fileID: -2534107325721671809}
   m_Layer: 0
-  m_Name: Room_End
+  m_Name: End
   m_TagString: GoalRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boundShrinkSize: 0.01
   allowedOutputs: []
+  isCritical: 0
 --- !u!114 &-5685993628643467465
 MonoBehaviour:
   m_ObjectHideFlags: 0

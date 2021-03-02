@@ -5,12 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Room
-  - Container
-  - Narrow
-  - Interact
-  - Environment
-  - RandomizedContainerArea
   - GoalRoom
+  - CapRoom
   layers:
   - Default
   - TransparentFX

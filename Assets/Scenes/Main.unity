@@ -152,15 +152,105 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2c47ac9aecaa24b8d4aaf88723647b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endRoom: 0
-  minRooms: 30
-  maxRooms: 100
+  tensionMap:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.62011755
+      outSlope: 0.62011755
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.08768967
+      value: 0.054377902
+      inSlope: 1.4461391
+      outSlope: 1.4461391
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1495502
+      value: 0.22508696
+      inSlope: 1.7692431
+      outSlope: 1.7692431
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.25526056
+      value: 0.28556404
+      inSlope: 1.3923019
+      outSlope: 1.3923019
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.34621456
+      value: 0.5281201
+      inSlope: 1.9024428
+      outSlope: 1.9024428
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.45428145
+      value: 0.5643353
+      inSlope: 1.7395016
+      outSlope: 1.7395016
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5413746
+      value: 0.82154274
+      inSlope: 1.3756572
+      outSlope: 1.3756572
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9506092
+      value: 0.61104435
+      inSlope: -3.1688488
+      outSlope: -3.1688488
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.041143797
+      outWeight: 0.4030472
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.21919867
+      outSlope: -0.21919867
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  minRooms: 50
+  maxRooms: 150
+  minPathDistance: 75
+  maxPathDistance: 300
   startRooms:
   - {fileID: 2449731690700448885, guid: c04017d3209ee4349abccd0ad804836b, type: 3}
   capRooms:
   - {fileID: 195624716564623498, guid: 503728386bfedba4299e0634e6c924f9, type: 3}
+  bifurcationDepth: 1
   roomBounds: []
   currentRoomCount: 1
+  rooms: []
 --- !u!4 &1608980934
 Transform:
   m_ObjectHideFlags: 0
@@ -240,43 +330,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6399676648134712556, guid: 3036fe1294454d3449e6634a6f76bb9b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.318861
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6399676648134712556, guid: 3036fe1294454d3449e6634a6f76bb9b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 69.682076
+      value: 93
       objectReference: {fileID: 0}
     - target: {fileID: 6399676648134712556, guid: 3036fe1294454d3449e6634a6f76bb9b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0980072
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6399676648134712556, guid: 3036fe1294454d3449e6634a6f76bb9b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.82600653
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6399676648134712556, guid: 3036fe1294454d3449e6634a6f76bb9b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.5636599
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6399676648134712556, guid: 3036fe1294454d3449e6634a6f76bb9b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0007455945
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6399676648134712556, guid: 3036fe1294454d3449e6634a6f76bb9b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0005086735
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6399676648134712556, guid: 3036fe1294454d3449e6634a6f76bb9b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6399676648134712556, guid: 3036fe1294454d3449e6634a6f76bb9b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6399676648134712556, guid: 3036fe1294454d3449e6634a6f76bb9b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3036fe1294454d3449e6634a6f76bb9b, type: 3}

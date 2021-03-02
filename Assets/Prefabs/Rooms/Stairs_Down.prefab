@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4793237972002137154}
   - component: {fileID: -3749490009012954228}
   m_Layer: 0
-  m_Name: Room_Stairs_Down
+  m_Name: Stairs_Down
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,12 +101,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ba33b55fc5ab446b8753be3cd7d9f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundShrinkSize: 0.01
+  boundShrinkSize: 0.02
   allowedOutputs:
   - {fileID: 7600523950116510540, guid: 6db58ea3894a7fa49ab809ea2a68070b, type: 3}
   - {fileID: 6258651638496335946, guid: 5ed3858e29a3590468de60f78f9db39e, type: 3}
   - {fileID: 3891771708168054305, guid: 21ecfe346dd98984e8627a7f60456e36, type: 3}
   - {fileID: 579091621056515102, guid: b46afe2e6a360bc4ba657f7f95a116f8, type: 3}
+  - {fileID: 518546399672011583, guid: 7fbec4d4c49559c48bd328873b777b5f, type: 3}
 --- !u!64 &-4793237972002137154
 MeshCollider:
   m_ObjectHideFlags: 0
