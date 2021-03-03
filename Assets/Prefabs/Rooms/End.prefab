@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1870051620920156154}
   - component: {fileID: -5685993628643467465}
   - component: {fileID: -2534107325721671809}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: End
   m_TagString: GoalRoom
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7600523950116510540}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 7ae4651039c2b7146aedca158a878d66, type: 2}
-  - {fileID: 2100000, guid: 092c35e83d9731e4b9bf70f1d8c51dfe, type: 2}
+  - {fileID: 2100000, guid: 88e464f8089012044861ab4d1a762dda, type: 2}
   - {fileID: 2100000, guid: 14420e81f02680e4487cc964900b6563, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   boundShrinkSize: 0.01
   allowedOutputs: []
   isCritical: 0
+  isBifurcation: 0
 --- !u!114 &-5685993628643467465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
@@ -153,9 +154,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7075626636153668086}
     m_Modifications:
+    - target: {fileID: 1532422837231180998, guid: e775bdcf078c64c4ab5e60bb68800f8b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.241
+      objectReference: {fileID: 0}
     - target: {fileID: 4417199084858924273, guid: e775bdcf078c64c4ab5e60bb68800f8b, type: 3}
       propertyPath: m_Name
       value: Ceiling Lamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397347264722352548, guid: e775bdcf078c64c4ab5e60bb68800f8b, type: 3}
+      propertyPath: m_SpotAngle
+      value: 66.9
       objectReference: {fileID: 0}
     - target: {fileID: 5952248952397708182, guid: e775bdcf078c64c4ab5e60bb68800f8b, type: 3}
       propertyPath: m_RootOrder
@@ -163,7 +172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5952248952397708182, guid: e775bdcf078c64c4ab5e60bb68800f8b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.142
       objectReference: {fileID: 0}
     - target: {fileID: 5952248952397708182, guid: e775bdcf078c64c4ab5e60bb68800f8b, type: 3}
       propertyPath: m_LocalPosition.y

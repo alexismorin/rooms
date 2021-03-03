@@ -158,90 +158,27 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0.62011755
-      outSlope: 0.62011755
+      inSlope: 1
+      outSlope: 1
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.08768967
-      value: 0.054377902
-      inSlope: 1.4461391
-      outSlope: 1.4461391
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.1495502
-      value: 0.22508696
-      inSlope: 1.7692431
-      outSlope: 1.7692431
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.25526056
-      value: 0.28556404
-      inSlope: 1.3923019
-      outSlope: 1.3923019
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.34621456
-      value: 0.5281201
-      inSlope: 1.9024428
-      outSlope: 1.9024428
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.45428145
-      value: 0.5643353
-      inSlope: 1.7395016
-      outSlope: 1.7395016
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.5413746
-      value: 0.82154274
-      inSlope: 1.3756572
-      outSlope: 1.3756572
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.9506092
-      value: 0.61104435
-      inSlope: -3.1688488
-      outSlope: -3.1688488
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.041143797
-      outWeight: 0.4030472
+      outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0
-      inSlope: -0.21919867
-      outSlope: -0.21919867
-      tangentMode: 0
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 1
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  minRooms: 50
-  maxRooms: 150
-  minPathDistance: 75
+  minRooms: 20
+  maxRooms: 300
+  minPathDistance: 20
   maxPathDistance: 300
   startRooms:
   - {fileID: 2449731690700448885, guid: c04017d3209ee4349abccd0ad804836b, type: 3}

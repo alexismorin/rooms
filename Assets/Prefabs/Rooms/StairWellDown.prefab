@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 1371808649878777291}
   - component: {fileID: 1519115422182621947}
   - component: {fileID: 8808846819587761770}
-  m_Layer: 0
-  m_Name: Room_StairWellDown
+  - component: {fileID: 3634731488270743487}
+  m_Layer: 6
+  m_Name: StairWellDown
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +52,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579091621056515102}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: afcf9d1a931e0bb48a86fa6b334218c4, type: 2}
-  - {fileID: 2100000, guid: 092c35e83d9731e4b9bf70f1d8c51dfe, type: 2}
+  - {fileID: 2100000, guid: 88e464f8089012044861ab4d1a762dda, type: 2}
   - {fileID: 2100000, guid: 14420e81f02680e4487cc964900b6563, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -104,6 +105,8 @@ MonoBehaviour:
   - {fileID: 6005746600521199190, guid: cc19d4fac54a68b4791082173bc519cb, type: 3}
   - {fileID: 385372415467173519, guid: 3eda0aff602d5ef47a5c2a4b45299f26, type: 3}
   - {fileID: 385372415467173519, guid: 3eda0aff602d5ef47a5c2a4b45299f26, type: 3}
+  isCritical: 0
+  isBifurcation: 0
 --- !u!64 &8808846819587761770
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -118,6 +121,35 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8303660386683564033, guid: 719f3d5e3f3012e47ae18e2b2b07488c, type: 3}
+--- !u!114 &3634731488270743487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579091621056515102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.06666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1001 &3358430414758759053
 PrefabInstance:
   m_ObjectHideFlags: 0

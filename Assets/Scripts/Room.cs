@@ -14,6 +14,7 @@ public class Room : MonoBehaviour
     [Header("Game Data")]
     public bool isCritical;
     public bool isBifurcation;
+    public float tension = 0;
 
     public void Init(Generator generator)
     {
@@ -123,9 +124,14 @@ public class Room : MonoBehaviour
             // look for outputs in the room
             if (child.name == "DoorFrame")
             {
-                if (child.childCount > 1)
+                if (child.childCount > 2)
                 {
-                    Destroy(child.GetChild(0).gameObject);
+                    while (child.childCount > 2)
+                    {
+                        Destroy(child.GetChild(1).gameObject);
+                        yield return null;
+                    }
+
                 }
             }
         }

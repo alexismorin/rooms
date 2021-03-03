@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8784725580044396287}
   - component: {fileID: -2777341248955624600}
   - component: {fileID: 2460418616404625108}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs_Up
   m_TagString: Room
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4673365077697901669}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: afcf9d1a931e0bb48a86fa6b334218c4, type: 2}
-  - {fileID: 2100000, guid: 092c35e83d9731e4b9bf70f1d8c51dfe, type: 2}
+  - {fileID: 2100000, guid: 88e464f8089012044861ab4d1a762dda, type: 2}
   - {fileID: 2100000, guid: 14420e81f02680e4487cc964900b6563, type: 2}
   - {fileID: 2100000, guid: afcf9d1a931e0bb48a86fa6b334218c4, type: 2}
   m_StaticBatchInfo:
@@ -108,6 +108,8 @@ MonoBehaviour:
   - {fileID: 3891771708168054305, guid: 21ecfe346dd98984e8627a7f60456e36, type: 3}
   - {fileID: 3971880545424889051, guid: ee4da7cbe7e868541909b808c3d2216d, type: 3}
   - {fileID: 518546399672011583, guid: 7fbec4d4c49559c48bd328873b777b5f, type: 3}
+  isCritical: 0
+  isBifurcation: 0
 --- !u!64 &-2777341248955624600
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -140,7 +142,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1

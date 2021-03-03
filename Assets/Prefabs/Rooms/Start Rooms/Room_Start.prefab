@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2948471988449859430}
   - component: {fileID: 2922092754410224099}
   - component: {fileID: 3584812140191914632}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Room_Start
   m_TagString: Room
   m_Icon: {fileID: 0}
@@ -66,8 +66,8 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: afcf9d1a931e0bb48a86fa6b334218c4, type: 2}
-  - {fileID: 2100000, guid: 092c35e83d9731e4b9bf70f1d8c51dfe, type: 2}
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 88e464f8089012044861ab4d1a762dda, type: 2}
+  - {fileID: 2100000, guid: 14420e81f02680e4487cc964900b6563, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,6 +111,8 @@ MonoBehaviour:
   - {fileID: 4673365077697901669, guid: 86f2467815137d04ebae1354e439adc2, type: 3}
   - {fileID: 591689132237051721, guid: 83dd1f74605f43141b25d58eca2005ab, type: 3}
   - {fileID: 518546399672011583, guid: 7fbec4d4c49559c48bd328873b777b5f, type: 3}
+  isCritical: 0
+  isBifurcation: 0
 --- !u!114 &2922092754410224099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,7 +131,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1

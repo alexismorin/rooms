@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 913036426077945584}
   - component: {fileID: 5193044242161055802}
   - component: {fileID: 5491408596054029548}
-  m_Layer: 0
-  m_Name: Room_Hangar
+  - component: {fileID: -7253684564171225963}
+  m_Layer: 6
+  m_Name: Hangar
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +52,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705524757089328933}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -124,6 +125,37 @@ MonoBehaviour:
   - {fileID: 4673365077697901669, guid: 86f2467815137d04ebae1354e439adc2, type: 3}
   - {fileID: 591689132237051721, guid: 83dd1f74605f43141b25d58eca2005ab, type: 3}
   - {fileID: 518546399672011583, guid: 7fbec4d4c49559c48bd328873b777b5f, type: 3}
+  isCritical: 0
+  isBifurcation: 0
+--- !u!114 &-7253684564171225963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705524757089328933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.06666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1001 &2675325103024178419
 PrefabInstance:
   m_ObjectHideFlags: 0

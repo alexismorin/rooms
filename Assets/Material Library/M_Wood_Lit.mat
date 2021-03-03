@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Ceiling_Lit
+  m_Name: M_Wood_Lit
   m_Shader: {fileID: 4800000, guid: 8ef033c8811dca3479036ac071d82944, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 0
@@ -55,6 +55,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _TopTexture0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
@@ -72,12 +76,13 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Tiling: 0
     - _UVSec: 0
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 1, g: 0.9625786, b: 0.9198113, a: 1}
+    - _Color: {r: 0.6792453, g: 0.5192595, b: 0.33641866, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _LightColor: {r: 0.084905684, g: 0.06857767, b: 0.06367926, a: 0}
-    - _Tint: {r: 0.95283014, g: 0.92282397, b: 0.876424, a: 0}
+    - _Tint: {r: 0.3962264, g: 0.27332506, b: 0.11400853, a: 0}
   m_BuildTextureStacks: []

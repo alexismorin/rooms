@@ -64,12 +64,12 @@ public class Generator : MonoBehaviour
 
     IEnumerator QA()
     {
-        //  yield return new WaitForSeconds(0.5f);
         yield return null;
 
         if (currentRoomCount < minRooms)
         {
 
+            print("too small");
             ResetWorld();
             yield break;
         }
@@ -77,7 +77,7 @@ public class Generator : MonoBehaviour
         GameObject[] endRooms = GameObject.FindGameObjectsWithTag("GoalRoom");
         if (endRooms.Length == 0)
         {
-
+            print("no end room");
             ResetWorld();
             yield break;
         }
@@ -105,7 +105,7 @@ public class Generator : MonoBehaviour
         // We check if the path is proper length
         if (goldenPathDistance < minPathDistance || goldenPathDistance > maxPathDistance)
         {
-
+            print("unsuitablepath");
             ResetWorld();
             yield break;
         }
@@ -122,6 +122,8 @@ public class Generator : MonoBehaviour
 
     void Process(GameObject furthestRoom)
     {
+        List<Room> roomTensionTemp = new List<Room>();
+
         Transform currentSelection = furthestRoom.transform;
         while (currentSelection.transform.parent != null)
         {
@@ -129,8 +131,15 @@ public class Generator : MonoBehaviour
             if (currentSelection.TryGetComponent<Room>(out room))
             {
                 room.isCritical = true;
+                roomTensionTemp.Add(room);
             }
             currentSelection = currentSelection.transform.parent;
+        }
+
+        // We transfer tension data onto the room data
+        for (int i = 0; i < roomTensionTemp.Count; i++)
+        {
+            roomTensionTemp[i].tension = tensionMap.Evaluate(1f - (1f / roomTensionTemp.Count * i));
         }
 
 
@@ -146,10 +155,10 @@ public class Generator : MonoBehaviour
                     if (child.name == "DoorFrame")
                     {
                         // we found a bifurcation. loop down and trim as needed!
-                        if (child.GetChild(0).GetComponent<Room>().isCritical == false)
+                        if (child.GetChild(1).GetComponent<Room>().isCritical == false)
                         {
                             int bifurcation = 0;
-                            GameObject bifurcatedRoom = child.GetChild(0).gameObject;
+                            GameObject bifurcatedRoom = child.GetChild(1).gameObject;
 
                             while (bifurcation < bifurcationDepth)
                             {
@@ -187,6 +196,7 @@ public class Generator : MonoBehaviour
 
     void Furnish()
     {
+        rooms[0].GetComponent<NavMeshSurface>().BuildNavMesh();
         RemoveMissingRooms();
     }
 
@@ -196,6 +206,7 @@ public class Generator : MonoBehaviour
 
     void ResetWorld()
     {
+        CancelInvoke("StartQA");
         StopCoroutine(QA());
         Destroy(transform.GetChild(0).gameObject);
         currentRoomCount = 1;
