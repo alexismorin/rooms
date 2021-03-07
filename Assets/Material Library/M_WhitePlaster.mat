@@ -7,11 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Outside
-  m_Shader: {fileID: 4800000, guid: 62f1d63ebd24e654fba01826cdae41a0, type: 3}
-  m_ShaderKeywords: _EMISSION
+  m_Name: M_WhitePlaster
+  m_Shader: {fileID: 4800000, guid: 8ef033c8811dca3479036ac071d82944, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 0
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -39,14 +39,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _HDR_Outside:
-        m_Texture: {fileID: 8900000, guid: 662e761735c9e114c91229b85587d28e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _H_Glass:
-        m_Texture: {fileID: 2800000, guid: 499524260bf3b5348a45d39b3cacdf20, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -63,8 +55,8 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _texcoord:
-        m_Texture: {fileID: 0}
+    - _TopTexture0:
+        m_Texture: {fileID: 2800000, guid: 249cf00287f128843aff34ecd634ffd3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -80,16 +72,17 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Refraction: 0.3
+    - _Radiosity: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Tiling: 0.2
     - _UVSec: 0
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissionColor: {r: 0.15917587, g: 0.42613447, b: 0.46226418, a: 1}
-    - _FrostTint: {r: 0.027189389, g: 0.076824486, b: 0.122641504, a: 0}
-    - _Tint: {r: 0.10933607, g: 0.5428999, b: 0.5943396, a: 0}
+    - _Color: {r: 0.8207547, g: 0.76474726, b: 0.70073867, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _LightColor: {r: 0, g: 0.31260023, b: 0.5754717, a: 0}
+    - _Tint: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
