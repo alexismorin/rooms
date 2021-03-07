@@ -32,7 +32,7 @@ GameObject:
   - component: {fileID: 7586602720141084452}
   - component: {fileID: 7065714178293222913}
   m_Layer: 6
-  m_Name: LargeLeft
+  m_Name: Small Chapel
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,7 +137,6 @@ MonoBehaviour:
   - {fileID: 385372415467173519, guid: 3eda0aff602d5ef47a5c2a4b45299f26, type: 3}
   - {fileID: 2721828067834721982, guid: e69ab2a6a512dbc49a2374ef3de1d3d9, type: 3}
   - {fileID: 7600523950116510540, guid: 6db58ea3894a7fa49ab809ea2a68070b, type: 3}
-  - {fileID: 5357014467510127113}
   - {fileID: 6258651638496335946, guid: 5ed3858e29a3590468de60f78f9db39e, type: 3}
   - {fileID: 3891771708168054305, guid: 21ecfe346dd98984e8627a7f60456e36, type: 3}
   - {fileID: 6005746600521199190, guid: cc19d4fac54a68b4791082173bc519cb, type: 3}

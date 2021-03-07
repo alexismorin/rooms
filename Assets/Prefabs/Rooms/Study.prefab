@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4248339947086448487}
   - component: {fileID: 8935630841638840839}
   m_Layer: 6
-  m_Name: T
+  m_Name: Study
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,6 @@ MonoBehaviour:
   - {fileID: 3891771708168054305, guid: 21ecfe346dd98984e8627a7f60456e36, type: 3}
   - {fileID: 6005746600521199190, guid: cc19d4fac54a68b4791082173bc519cb, type: 3}
   - {fileID: 4673365077697901669, guid: 86f2467815137d04ebae1354e439adc2, type: 3}
-  - {fileID: 591689132237051721}
   - {fileID: 518546399672011583, guid: 7fbec4d4c49559c48bd328873b777b5f, type: 3}
   - {fileID: 1705524757089328933, guid: e34e59bb94fe8f940bfa73a6b2b25ba3, type: 3}
   isCritical: 0
