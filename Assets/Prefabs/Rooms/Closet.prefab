@@ -64,8 +64,6 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 88e464f8089012044861ab4d1a762dda, type: 2}
-  - {fileID: 2100000, guid: 14420e81f02680e4487cc964900b6563, type: 2}
-  - {fileID: 2100000, guid: 7d1097665f6d05e4f99053d04776808e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -103,6 +101,7 @@ MonoBehaviour:
   allowedOutputs: []
   isCritical: 0
   isBifurcation: 0
+  tension: 0
 --- !u!114 &2658032280518613666
 MonoBehaviour:
   m_ObjectHideFlags: 0

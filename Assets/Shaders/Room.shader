@@ -4,8 +4,10 @@ Shader "Room"
 {
 	Properties
 	{
-		_TopTexture0("Top Texture 0", 2D) = "white" {}
+		_Floor("Floor", 2D) = "white" {}
+		_Walls("Walls", 2D) = "white" {}
 		_Tint("Tint", Color) = (0,0,0,0)
+		_Ceiling("Ceiling", 2D) = "white" {}
 		[HDR]_LightColor("Light Color", Color) = (0,0,0,0)
 		_Radiosity("Radiosity", Float) = 1
 		_Tiling("Tiling", Float) = 0
@@ -37,23 +39,28 @@ Shader "Room"
 			float4 vertexColor : COLOR;
 		};
 
-		sampler2D _TopTexture0;
+		sampler2D _Floor;
+		sampler2D _Walls;
+		sampler2D _Ceiling;
 		uniform float _Tiling;
 		uniform float4 _Tint;
 		uniform float4 _LightColor;
 		uniform float _Radiosity;
 
 
-		inline float4 TriplanarSampling8( sampler2D topTexMap, float3 worldPos, float3 worldNormal, float falloff, float2 tiling, float3 normalScale, float3 index )
+		inline float4 TriplanarSampling8( sampler2D topTexMap, sampler2D midTexMap, sampler2D botTexMap, float3 worldPos, float3 worldNormal, float falloff, float2 tiling, float3 normalScale, float3 index )
 		{
 			float3 projNormal = ( pow( abs( worldNormal ), falloff ) );
 			projNormal /= ( projNormal.x + projNormal.y + projNormal.z ) + 0.00001;
 			float3 nsign = sign( worldNormal );
-			half4 xNorm; half4 yNorm; half4 zNorm;
-			xNorm = tex2D( topTexMap, tiling * worldPos.zy * float2(  nsign.x, 1.0 ) );
-			yNorm = tex2D( topTexMap, tiling * worldPos.xz * float2(  nsign.y, 1.0 ) );
-			zNorm = tex2D( topTexMap, tiling * worldPos.xy * float2( -nsign.z, 1.0 ) );
-			return xNorm * projNormal.x + yNorm * projNormal.y + zNorm * projNormal.z;
+			float negProjNormalY = max( 0, projNormal.y * -nsign.y );
+			projNormal.y = max( 0, projNormal.y * nsign.y );
+			half4 xNorm; half4 yNorm; half4 yNormN; half4 zNorm;
+			xNorm  = tex2D( midTexMap, tiling * worldPos.zy * float2(  nsign.x, 1.0 ) );
+			yNorm  = tex2D( topTexMap, tiling * worldPos.xz * float2(  nsign.y, 1.0 ) );
+			yNormN = tex2D( botTexMap, tiling * worldPos.xz * float2(  nsign.y, 1.0 ) );
+			zNorm  = tex2D( midTexMap, tiling * worldPos.xy * float2( -nsign.z, 1.0 ) );
+			return xNorm * projNormal.x + yNorm * projNormal.y + yNormN * negProjNormalY + zNorm * projNormal.z;
 		}
 
 
@@ -65,7 +72,7 @@ Shader "Room"
 			float3 ase_worldNormal = WorldNormalVector( i, float3( 0, 0, 1 ) );
 			float3 ase_vertex3Pos = mul( unity_WorldToObject, float4( i.worldPos , 1 ) );
 			float3 ase_vertexNormal = mul( unity_WorldToObject, float4( ase_worldNormal, 0 ) );
-			float4 triplanar8 = TriplanarSampling8( _TopTexture0, ase_vertex3Pos, ase_vertexNormal, 5.0, appendResult11, 1.0, 0 );
+			float4 triplanar8 = TriplanarSampling8( _Floor, _Walls, _Ceiling, ase_vertex3Pos, ase_vertexNormal, 10.0, appendResult11, float3( 1,1,1 ), float3(0,0,0) );
 			float4 temp_output_9_0 = ( triplanar8 * _Tint );
 			o.Albedo = temp_output_9_0.xyz;
 			o.Emission = ( temp_output_9_0 * ( ( _LightColor * _Radiosity ) * i.vertexColor.r ) ).xyz;
@@ -158,15 +165,15 @@ Shader "Room"
 }
 /*ASEBEGIN
 Version=18800
-295;364;1104;655;1049.788;736.4984;1.3;True;True
-Node;AmplifyShaderEditor.RangedFloatNode;10;-830.9882,-354.2989;Inherit;False;Property;_Tiling;Tiling;4;0;Create;True;0;0;0;False;0;False;0;0;0;0;0;1;FLOAT;0
-Node;AmplifyShaderEditor.ColorNode;4;-611,-91.5;Inherit;False;Property;_LightColor;Light Color;2;1;[HDR];Create;True;0;0;0;False;0;False;0,0,0,0;0.08490568,0.06857767,0.06367926,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.RangedFloatNode;7;-584.5208,163.2331;Inherit;False;Property;_Radiosity;Radiosity;3;0;Create;True;0;0;0;False;0;False;1;2;0;0;0;1;FLOAT;0
+313;376;1104;643;992.9774;667.2425;1;True;True
+Node;AmplifyShaderEditor.RangedFloatNode;10;-830.9882,-354.2989;Inherit;False;Property;_Tiling;Tiling;6;0;Create;True;0;0;0;False;0;False;0;0.2;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.ColorNode;4;-611,-91.5;Inherit;False;Property;_LightColor;Light Color;4;1;[HDR];Create;True;0;0;0;False;0;False;0,0,0,0;0,0.3126002,0.5754717,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.RangedFloatNode;7;-584.5208,163.2331;Inherit;False;Property;_Radiosity;Radiosity;5;0;Create;True;0;0;0;False;0;False;1;0.01;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.DynamicAppendNode;11;-615.5881,-365.9987;Inherit;False;FLOAT2;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT2;0
 Node;AmplifyShaderEditor.VertexColorNode;2;-360,119.5;Inherit;False;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;6;-361.5208,11.23306;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;FLOAT;0;False;1;COLOR;0
-Node;AmplifyShaderEditor.ColorNode;1;-341,-237.5;Inherit;False;Property;_Tint;Tint;1;0;Create;True;0;0;0;False;0;False;0,0,0,0;0.4150943,0.3337119,0.2525809,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.TriplanarNode;8;-470.8883,-455.6989;Inherit;True;Spherical;Object;False;Top Texture 0;_TopTexture0;white;0;None;Mid Texture 0;_MidTexture0;white;-1;None;Bot Texture 0;_BotTexture0;white;-1;None;Triplanar;Tangent;10;0;SAMPLER2D;;False;5;FLOAT;1;False;1;SAMPLER2D;;False;6;FLOAT;0;False;2;SAMPLER2D;;False;7;FLOAT;0;False;9;FLOAT3;0,0,0;False;8;FLOAT;1;False;3;FLOAT2;1,1;False;4;FLOAT;5;False;5;FLOAT4;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ColorNode;1;-341,-237.5;Inherit;False;Property;_Tint;Tint;2;0;Create;True;0;0;0;False;0;False;0,0,0,0;1,1,1,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.TriplanarNode;8;-470.8883,-457.6989;Inherit;True;Cylindrical;Object;False;Floor;_Floor;white;0;None;Walls;_Walls;white;1;None;Ceiling;_Ceiling;white;3;None;Triplanar;Tangent;10;0;SAMPLER2D;;False;5;FLOAT;1;False;1;SAMPLER2D;;False;6;FLOAT;0;False;2;SAMPLER2D;;False;7;FLOAT;0;False;9;FLOAT3;0,0,0;False;8;FLOAT3;1,1,1;False;3;FLOAT2;1,1;False;4;FLOAT;10;False;5;FLOAT4;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;3;-179,70.5;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;FLOAT;0;False;1;COLOR;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;9;-65.28815,-375.0988;Inherit;False;2;2;0;FLOAT4;0,0,0,0;False;1;COLOR;0,0,0,0;False;1;FLOAT4;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;5;-72,-83.5;Inherit;False;2;2;0;FLOAT4;0,0,0,0;False;1;COLOR;0,0,0,0;False;1;FLOAT4;0
@@ -185,4 +192,4 @@ WireConnection;5;1;3;0
 WireConnection;0;0;9;0
 WireConnection;0;2;5;0
 ASEEND*/
-//CHKSM=2DB7D9B5D072014E1BD578FFD5ECBFBEF2E773F6
+//CHKSM=00681FE8B475E72C1776B1BB592F5F7A189895B0
