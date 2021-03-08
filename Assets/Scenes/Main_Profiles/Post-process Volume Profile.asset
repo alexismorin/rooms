@@ -18,19 +18,19 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 1
+    value: 3
   threshold:
     overrideState: 1
-    value: 1
+    value: 0.27
   softKnee:
     overrideState: 0
-    value: 0.5
+    value: 0.371
   clamp:
     overrideState: 0
     value: 65472
   diffusion:
-    overrideState: 0
-    value: 7
+    overrideState: 1
+    value: 7.39
   anamorphicRatio:
     overrideState: 0
     value: 0
@@ -47,6 +47,37 @@ MonoBehaviour:
   dirtIntensity:
     overrideState: 0
     value: 0
+--- !u!114 &-1641767197573324916
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59849baf3c77ffa40a7ef3d887ca271d, type: 3}
+  m_Name: AthmosphericFogPPSSettings
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  _Tint:
+    overrideState: 1
+    value: {r: 0, g: 0.6914191, b: 1, a: 1}
+  _FogDistance:
+    overrideState: 1
+    value: 3000
+  _Scale:
+    overrideState: 1
+    value: 25.84
+  _Offset:
+    overrideState: 1
+    value: 19.76
+  _FogExposure:
+    overrideState: 1
+    value: 8
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +95,7 @@ MonoBehaviour:
   - {fileID: 7650990790734349659}
   - {fileID: 6507417498117662070}
   - {fileID: -3583427127331227757}
+  - {fileID: -1641767197573324916}
 --- !u!114 &4231239864888879159
 MonoBehaviour:
   m_ObjectHideFlags: 3

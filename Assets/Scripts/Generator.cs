@@ -69,7 +69,7 @@ public class Generator : MonoBehaviour
         if (currentRoomCount < minRooms)
         {
 
-            print("too small");
+            Debug.LogWarning("too small");
             ResetWorld();
             yield break;
         }
@@ -77,7 +77,7 @@ public class Generator : MonoBehaviour
         GameObject[] endRooms = GameObject.FindGameObjectsWithTag("GoalRoom");
         if (endRooms.Length == 0)
         {
-            print("no end room");
+            Debug.LogWarning("no end room");
             ResetWorld();
             yield break;
         }
@@ -105,13 +105,13 @@ public class Generator : MonoBehaviour
         // We check if the path is proper length
         if (goldenPathDistance < minPathDistance || goldenPathDistance > maxPathDistance)
         {
-            print("unsuitablepath");
+            Debug.LogWarning("unsuitablepath");
             ResetWorld();
             yield break;
         }
 
         DrawGoldenPath(furthestRoom);
-        print(goldenPathDistance);
+        Debug.LogWarning("Path Length: " + goldenPathDistance);
         yield return null;
 
 
@@ -162,13 +162,15 @@ public class Generator : MonoBehaviour
 
                             while (bifurcation < bifurcationDepth)
                             {
+                                bifurcatedRoom.name = System.DateTime.Now.Millisecond.ToString();
+                                print(bifurcatedRoom.name);
                                 bifurcatedRoom.GetComponent<Room>().isCritical = true;
                                 bifurcatedRoom.GetComponent<Room>().isBifurcation = true;
                                 foreach (Transform bifurcatedChild in bifurcatedRoom.transform)
                                 {
                                     if (bifurcatedChild.name == "DoorFrame")
                                     {
-                                        bifurcatedRoom = bifurcatedChild.GetChild(0).gameObject;
+                                        bifurcatedRoom = bifurcatedChild.GetChild(1).gameObject;
                                     }
                                 }
                                 bifurcation++;

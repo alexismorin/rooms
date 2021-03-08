@@ -184,7 +184,7 @@ MonoBehaviour:
   - {fileID: 2449731690700448885, guid: c04017d3209ee4349abccd0ad804836b, type: 3}
   capRooms:
   - {fileID: 195624716564623498, guid: 503728386bfedba4299e0634e6c924f9, type: 3}
-  bifurcationDepth: 1
+  bifurcationDepth: 2
   roomBounds: []
   currentRoomCount: 1
   rooms: []
