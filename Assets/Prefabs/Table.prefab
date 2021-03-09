@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1a4f205317daeb943a418c798178aa3d, type: 2}
+  - {fileID: 2100000, guid: a921877217052e84a9a172957b4d3d90, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,6 +104,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7756201523034552630}
     m_Modifications:
+    - target: {fileID: 5497868395240963602, guid: d478c2b8b6ee1674699d550619f91081, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a6cebc20a9c3bb42b04323027269cbc, type: 2}
     - target: {fileID: 6290585698001002439, guid: d478c2b8b6ee1674699d550619f91081, type: 3}
       propertyPath: m_Name
       value: TableCloth
