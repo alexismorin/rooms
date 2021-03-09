@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -932231851083480927}
   - component: {fileID: -4084494144299213922}
   m_Layer: 6
-  m_Name: T_Shallow
+  m_Name: T
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,6 +118,8 @@ MonoBehaviour:
   - {fileID: 6005746600521199190, guid: cc19d4fac54a68b4791082173bc519cb, type: 3}
   - {fileID: 4673365077697901669, guid: 86f2467815137d04ebae1354e439adc2, type: 3}
   - {fileID: 591689132237051721, guid: 83dd1f74605f43141b25d58eca2005ab, type: 3}
+  - {fileID: 6434491003599885506, guid: 227f661ddd8e0504c89c216656feb5e6, type: 3}
+  - {fileID: 8475380149028248775, guid: 098efbc638183034594a63110c496421, type: 3}
   isCritical: 0
   isBifurcation: 0
   tension: 0
@@ -209,7 +211,7 @@ ReflectionProbe:
   m_Mode: 1
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
-  m_Resolution: 64
+  m_Resolution: 32
   m_UpdateFrequency: 0
   m_BoxSize: {x: 5.5, y: 5.5, z: 3.3000002}
   m_BoxOffset: {x: 0, y: 0, z: 0}

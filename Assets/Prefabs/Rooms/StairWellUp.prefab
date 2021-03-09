@@ -185,7 +185,7 @@ MonoBehaviour:
   allowedOutputs:
   - {fileID: 4673365077697901669, guid: 86f2467815137d04ebae1354e439adc2, type: 3}
   - {fileID: 385372415467173519, guid: 3eda0aff602d5ef47a5c2a4b45299f26, type: 3}
-  - {fileID: 2721828067834721982, guid: e69ab2a6a512dbc49a2374ef3de1d3d9, type: 3}
+  - {fileID: 8475380149028248775, guid: 098efbc638183034594a63110c496421, type: 3}
   isCritical: 0
   isBifurcation: 0
   tension: 0

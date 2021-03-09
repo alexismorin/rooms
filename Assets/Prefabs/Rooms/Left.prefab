@@ -216,6 +216,8 @@ MonoBehaviour:
   - {fileID: 591689132237051721, guid: 83dd1f74605f43141b25d58eca2005ab, type: 3}
   - {fileID: 518546399672011583, guid: 7fbec4d4c49559c48bd328873b777b5f, type: 3}
   - {fileID: 4965551300732618722, guid: 9e3457639e4bf7f4fb08ce2ac34b9dea, type: 3}
+  - {fileID: 6434491003599885506, guid: 227f661ddd8e0504c89c216656feb5e6, type: 3}
+  - {fileID: 8475380149028248775, guid: 098efbc638183034594a63110c496421, type: 3}
   isCritical: 0
   isBifurcation: 0
   tension: 0

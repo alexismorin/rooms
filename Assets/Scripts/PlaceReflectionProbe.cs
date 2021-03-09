@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaceReflectionProbe : MonoBehaviour {
+public class PlaceReflectionProbe : MonoBehaviour
+{
 
     public bool refresh = false;
     // Start is called before the first frame update
-    void OnValidate() {
-        print("Refreshed");
+    void OnValidate()
+    {
         transform.position = transform.parent.GetComponent<MeshRenderer>().bounds.center;
         ReflectionProbe reflectionProbe = GetComponent<ReflectionProbe>();
         reflectionProbe.mode = UnityEngine.Rendering.ReflectionProbeMode.Realtime;
@@ -19,11 +20,13 @@ public class PlaceReflectionProbe : MonoBehaviour {
         refresh = false;
     }
 
-    void Start() {
+    void Start()
+    {
         Invoke("Bake", 1f);
     }
 
-    void Bake() {
+    void Bake()
+    {
         GetComponent<ReflectionProbe>().RenderProbe();
     }
 
