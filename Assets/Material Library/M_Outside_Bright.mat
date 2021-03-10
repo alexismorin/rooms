@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Outside
+  m_Name: M_Outside_Bright
   m_Shader: {fileID: 4800000, guid: 62f1d63ebd24e654fba01826cdae41a0, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 0
@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ColourMask:
-        m_Texture: {fileID: 2800000, guid: 499524260bf3b5348a45d39b3cacdf20, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7d260d9c6956b654a8a72660e2eee7c4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -44,11 +44,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HDR_Outside:
-        m_Texture: {fileID: 8900000, guid: 662e761735c9e114c91229b85587d28e, type: 3}
+        m_Texture: {fileID: 8900000, guid: df8267950e369fd41b94c506f058e5f5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _H_Glass:
-        m_Texture: {fileID: 2800000, guid: 499524260bf3b5348a45d39b3cacdf20, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -60,7 +60,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: f59ab00d45592c34e9fb92928135953d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 40495acb611bc7a4ca4ad6287bc1a23c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -81,7 +81,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FrostScale: 0.451
+    - _FrostScale: 0.238
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
@@ -89,7 +89,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Refraction: 0.93
+    - _Refraction: 0.9
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -99,6 +99,6 @@ Material:
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0.15917587, g: 0.42613447, b: 0.46226418, a: 1}
-    - _FrostTint: {r: 0.030037388, g: 0.056374148, b: 0.08490568, a: 0}
-    - _Tint: {r: 0.40997684, g: 0.7830188, b: 0.74996454, a: 0}
+    - _FrostTint: {r: 0.047169805, g: 0.026902892, b: 0.015797436, a: 0}
+    - _Tint: {r: 0.49056602, g: 0.38180846, b: 0.38180846, a: 0}
   m_BuildTextureStacks: []
