@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1561634121293622193}
   m_Layer: 0
   m_Name: Table
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,6 +111,10 @@ PrefabInstance:
     - target: {fileID: 6290585698001002439, guid: d478c2b8b6ee1674699d550619f91081, type: 3}
       propertyPath: m_Name
       value: TableCloth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6290585698001002439, guid: d478c2b8b6ee1674699d550619f91081, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6631399756405982589, guid: d478c2b8b6ee1674699d550619f91081, type: 3}
       propertyPath: m_RootOrder

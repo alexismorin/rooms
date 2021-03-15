@@ -221,6 +221,28 @@ public class Generator : MonoBehaviour
     {
         rooms[0].GetComponent<NavMeshSurface>().BuildNavMesh();
         RemoveMissingRooms();
+
+
+        Batch();
+    }
+
+    void Batch()
+    {
+        // We create a list of things to batch and populate it
+        List<GameObject> batchTargets = new List<GameObject>();
+
+        for (int i = 0; i < rooms.Count; i++)
+        {
+            //       batchTargets.Add(rooms[i].gameObject);
+        }
+        GameObject[] furniture = GameObject.FindGameObjectsWithTag("Furniture");
+        for (int i = 0; i < furniture.Length; i++)
+        {
+            batchTargets.Add(furniture[i]);
+        }
+
+        StaticBatchingUtility.Combine(batchTargets.ToArray(), this.gameObject);
+
     }
 
 

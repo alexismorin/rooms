@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Room
   - GoalRoom
-  - CapRoom
+  - Furniture
   layers:
   - Default
   - TransparentFX
