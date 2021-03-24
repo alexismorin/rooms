@@ -11,7 +11,6 @@ namespace Dialogue
 
         public CharacterInfo character;
         [TextArea] public string text;
-        public bool endConversation = false;
         [Output(instancePortList = true)] public List<Answer> answers = new List<Answer>();
 
         [System.Serializable]

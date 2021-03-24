@@ -6,7 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using XNode;
 
-public class DialogueSystem : MonoBehaviour {
+public class DialogueSystem : MonoBehaviour
+{
 
     [SerializeField]
     DialogueGraph testdialogue;
@@ -20,6 +21,7 @@ public class DialogueSystem : MonoBehaviour {
     GameObject textBox;
     Text text;
     Text nextText;
+    Text nameText;
 
     // Internals
 
@@ -27,9 +29,11 @@ public class DialogueSystem : MonoBehaviour {
     bool inDialogue;
     List<GameObject> currentButtons = new List<GameObject>();
 
-    void Start() {
-        text = textBox.transform.GetChild(0).GetComponent<Text>();
-        nextText = textBox.transform.GetChild(1).GetComponent<Text>();
+    void Start()
+    {
+        nameText = textBox.transform.GetChild(0).GetComponent<Text>();
+        text = textBox.transform.GetChild(1).GetComponent<Text>();
+        nextText = textBox.transform.GetChild(2).GetComponent<Text>();
 
         textBox.SetActive(false);
         templateButton.SetActive(false);
@@ -37,7 +41,8 @@ public class DialogueSystem : MonoBehaviour {
         ProcessDialogue(testdialogue);
     }
 
-    void ProcessDialogue(DialogueGraph conversation) {
+    void ProcessDialogue(DialogueGraph conversation)
+    {
         graph = conversation;
         graph.Restart();
         inDialogue = true;
@@ -45,25 +50,32 @@ public class DialogueSystem : MonoBehaviour {
         UpdateDialogue();
     }
 
-    void UpdateDialogue() {
+    void UpdateDialogue()
+    {
         textBox.SetActive(true);
         text.text = graph.current.text;
 
-        if (graph.current.answers.Count == 0) {
+        nameText.text = graph.current.character.name;
+        nameText.color = graph.current.character.color;
+
+        if (graph.current.answers.Count == 0)
+        {
             nextText.enabled = true;
-        } else {
+        }
+        else
+        {
             nextText.enabled = false;
         }
 
-
-
         // Remove old buttons
-        for (int i = 0; i < currentButtons.Count; i++) {
+        for (int i = 0; i < currentButtons.Count; i++)
+        {
             Destroy(currentButtons[i]);
         }
 
         // Add new buttons
-        for (int i = 0; i < graph.current.answers.Count; i++) {
+        for (int i = 0; i < graph.current.answers.Count; i++)
+        {
             GameObject buttonInstance = Instantiate(templateButton, templateButton.transform.position, Quaternion.identity, templateButton.transform.parent);
             currentButtons.Add(buttonInstance);
 
@@ -72,29 +84,53 @@ public class DialogueSystem : MonoBehaviour {
             int currentAnswer = i;
             buttonInstance.GetComponent<Button>().onClick.AddListener(() => UpdateDialogueState(currentAnswer));
         }
+
     }
 
-    public void UpdateDialogueState(int reply) {
+    public void UpdateDialogueState(int reply)
+    {
         graph.AnswerQuestion(reply);
         UpdateDialogue();
     }
 
-    public void Update() {
-        if (inDialogue) {
-            if (Input.GetButtonDown("Fire1")) {
+    void EndDialogue()
+    {
+        inDialogue = false;
+        textBox.SetActive(false);
+        templateButton.SetActive(false);
+    }
 
-                if (graph.current.endConversation) {
-                    inDialogue = false;
-                } else {
-
-                    if (graph.current.answers.Count == 0) {
-                        UpdateDialogueState(0);
+    public void Update()
+    {
+        if (inDialogue)
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                // If this is a node with no answer, we're either a no-reply node, or the end
+                if (graph.current.answers.Count == 0)
+                {
+                    foreach (NodePort port in graph.current.Ports)
+                    {
+                        if (port.fieldName == "output")
+                        {
+                            if (port.GetConnections().Count == 0)
+                            {
+                                // End the dialogue
+                                EndDialogue();
+                            }
+                            else
+                            {
+                                // This is a text-only graph
+                                UpdateDialogueState(0);
+                            }
+                        }
                     }
                 }
-
             }
         }
     }
+
+
 
 
 }
