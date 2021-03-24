@@ -21,6 +21,7 @@ MonoBehaviour:
     - output
     - answers 0
     - answers 1
+    - answers 2
     values:
     - _fieldName: answers
       _node: {fileID: -7237085100710200339}
@@ -77,14 +78,28 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: answers 2
+      _node: {fileID: -7237085100710200339}
+      _typeQualifiedName: Dialogue.Chat+Answer, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 8761705665595662308}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
   input: {fileID: 0}
   output: {fileID: 0}
-  character: {fileID: 11400000, guid: 59700339aa10a86408c963d74f582be6, type: 2}
-  text: Now how about this?
+  character: {fileID: 11400000, guid: cbbbadce42f78d84d9c5ec7d39f58a5f, type: 2}
+  text: Have you seen anyone else around here?
   answers:
   - text: Yes
     voiceClip: {fileID: 0}
   - text: No
+    voiceClip: {fileID: 0}
+  - text: Why do you ask?
     voiceClip: {fileID: 0}
 --- !u!114 &-3087430234048151600
 MonoBehaviour:
@@ -99,7 +114,7 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 184, y: 40}
+  position: {x: 200, y: -56}
   ports:
     keys:
     - answers
@@ -139,8 +154,8 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  character: {fileID: 11400000, guid: 59700339aa10a86408c963d74f582be6, type: 2}
-  text: You replied Yes!
+  character: {fileID: 11400000, guid: cbbbadce42f78d84d9c5ec7d39f58a5f, type: 2}
+  text: Wow, nice!
   answers: []
 --- !u!114 &-1654305995129309320
 MonoBehaviour:
@@ -155,7 +170,7 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 184, y: 264}
+  position: {x: 232, y: 168}
   ports:
     keys:
     - answers
@@ -195,8 +210,8 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  character: {fileID: 11400000, guid: 59700339aa10a86408c963d74f582be6, type: 2}
-  text: You replied no!
+  character: {fileID: 11400000, guid: cbbbadce42f78d84d9c5ec7d39f58a5f, type: 2}
+  text: Oh. Alright.
   answers: []
 --- !u!114 &11400000
 MonoBehaviour:
@@ -215,7 +230,7 @@ MonoBehaviour:
   - {fileID: 2132071904534603120}
   - {fileID: -3087430234048151600}
   - {fileID: -1654305995129309320}
-  - {fileID: 2762596710946451389}
+  - {fileID: 8761705665595662308}
   current: {fileID: -7237085100710200339}
 --- !u!114 &2132071904534603120
 MonoBehaviour:
@@ -230,7 +245,7 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -696, y: 24}
+  position: {x: -776, y: -8}
   ports:
     keys:
     - answers
@@ -270,10 +285,10 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  character: {fileID: 11400000, guid: 59700339aa10a86408c963d74f582be6, type: 2}
-  text: This is an empty line with no replies possible.
+  character: {fileID: 11400000, guid: cbbbadce42f78d84d9c5ec7d39f58a5f, type: 2}
+  text: Oh, hello.
   answers: []
---- !u!114 &2762596710946451389
+--- !u!114 &8761705665595662308
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -286,7 +301,7 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 168, y: -248}
+  position: {x: 200, y: 392}
   ports:
     keys:
     - answers
@@ -294,7 +309,7 @@ MonoBehaviour:
     - output
     values:
     - _fieldName: answers
-      _node: {fileID: 2762596710946451389}
+      _node: {fileID: 8761705665595662308}
       _typeQualifiedName: System.Collections.Generic.List`1[[Dialogue.Chat+Answer,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
@@ -304,16 +319,19 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: input
-      _node: {fileID: 2762596710946451389}
+      _node: {fileID: 8761705665595662308}
       _typeQualifiedName: Dialogue.DialogueBaseNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: answers 2
+        node: {fileID: -7237085100710200339}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: output
-      _node: {fileID: 2762596710946451389}
+      _node: {fileID: 8761705665595662308}
       _typeQualifiedName: Dialogue.DialogueBaseNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections: []
@@ -323,6 +341,6 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  character: {fileID: 11400000, guid: 59700339aa10a86408c963d74f582be6, type: 2}
-  text: This is an empty line with no replies possible.
+  character: {fileID: 11400000, guid: cbbbadce42f78d84d9c5ec7d39f58a5f, type: 2}
+  text: It's quite lonely out here.
   answers: []
