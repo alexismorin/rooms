@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Dialogue;
 using UnityEngine;
 using UnityEngine.UI;
-using Dialogue;
 using XNode;
-using System.Linq;
 
-public class DialogueSystem : MonoBehaviour
-{
+public class DialogueSystem : MonoBehaviour {
 
     [SerializeField]
     DialogueGraph testdialogue;
@@ -20,6 +19,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField]
     GameObject textBox;
     Text text;
+    Text nextText;
 
     // Internals
 
@@ -27,9 +27,9 @@ public class DialogueSystem : MonoBehaviour
     bool inDialogue;
     List<GameObject> currentButtons = new List<GameObject>();
 
-    void Start()
-    {
+    void Start() {
         text = textBox.transform.GetChild(0).GetComponent<Text>();
+        nextText = textBox.transform.GetChild(1).GetComponent<Text>();
 
         textBox.SetActive(false);
         templateButton.SetActive(false);
@@ -37,8 +37,7 @@ public class DialogueSystem : MonoBehaviour
         ProcessDialogue(testdialogue);
     }
 
-    void ProcessDialogue(DialogueGraph conversation)
-    {
+    void ProcessDialogue(DialogueGraph conversation) {
         graph = conversation;
         graph.Restart();
         inDialogue = true;
@@ -46,20 +45,25 @@ public class DialogueSystem : MonoBehaviour
         UpdateDialogue();
     }
 
-    void UpdateDialogue()
-    {
+    void UpdateDialogue() {
         textBox.SetActive(true);
         text.text = graph.current.text;
 
+        if (graph.current.answers.Count == 0) {
+            nextText.enabled = true;
+        } else {
+            nextText.enabled = false;
+        }
+
+
+
         // Remove old buttons
-        for (int i = 0; i < currentButtons.Count; i++)
-        {
+        for (int i = 0; i < currentButtons.Count; i++) {
             Destroy(currentButtons[i]);
         }
 
         // Add new buttons
-        for (int i = 0; i < graph.current.answers.Count; i++)
-        {
+        for (int i = 0; i < graph.current.answers.Count; i++) {
             GameObject buttonInstance = Instantiate(templateButton, templateButton.transform.position, Quaternion.identity, templateButton.transform.parent);
             currentButtons.Add(buttonInstance);
 
@@ -70,28 +74,20 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    public void UpdateDialogueState(int reply)
-    {
+    public void UpdateDialogueState(int reply) {
         graph.AnswerQuestion(reply);
         UpdateDialogue();
     }
 
-    public void Update()
-    {
-        if (inDialogue)
-        {
-            if (Input.GetButtonDown("Fire1"))
-            {
+    public void Update() {
+        if (inDialogue) {
+            if (Input.GetButtonDown("Fire1")) {
 
-                if (graph.current.endConversation)
-                {
+                if (graph.current.endConversation) {
                     inDialogue = false;
-                }
-                else
-                {
+                } else {
 
-                    if (graph.current.answers.Count == 0)
-                    {
+                    if (graph.current.answers.Count == 0) {
                         UpdateDialogueState(0);
                     }
                 }
