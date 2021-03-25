@@ -215,8 +215,8 @@ Node;AmplifyShaderEditor.LightAttenuation;5;-1751.312,214.5667;Inherit;True;0;1;
 Node;AmplifyShaderEditor.SaturateNode;4;-1371.312,-4.433283;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;6;-1239.107,73.68538;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.DynamicAppendNode;8;-933.2672,207.3556;Inherit;False;FLOAT2;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT2;0
-Node;AmplifyShaderEditor.SamplerNode;9;-747.4042,185.257;Inherit;True;Property;_Ramp;Ramp;0;0;Create;True;0;0;0;False;0;False;-1;None;eb4b4e13020ef8c4fafd0fdcc0ff0a06;True;0;False;white;LockedToTexture2D;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.LightColorNode;11;-723.825,-24.90305;Inherit;False;0;3;COLOR;0;FLOAT3;1;FLOAT;2
+Node;AmplifyShaderEditor.SamplerNode;9;-747.4042,185.257;Inherit;True;Property;_Ramp;Ramp;0;0;Create;True;0;0;0;False;0;False;-1;None;eb4b4e13020ef8c4fafd0fdcc0ff0a06;True;0;False;white;LockedToTexture2D;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.IndirectDiffuseLighting;12;-706.2917,-130.1173;Inherit;False;Tangent;1;0;FLOAT3;0,0,1;False;1;FLOAT3;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;10;-428.4817,34.01285;Inherit;False;2;2;0;FLOAT3;0,0,0;False;1;FLOAT;0;False;1;FLOAT3;0
 Node;AmplifyShaderEditor.SimpleAddOpNode;13;-248.4817,-114.9872;Inherit;False;2;2;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;1;FLOAT3;0
@@ -245,4 +245,4 @@ WireConnection;16;0;17;0
 WireConnection;16;1;14;0
 WireConnection;0;13;16;0
 ASEEND*/
-//CHKSM=55DAAF6341B1BF7D5AE53C64CEABCFFB7E0E39E4
+//CHKSM=5F6D16AEB0CEAFCDA89E55B44C631DB7B287E83C
