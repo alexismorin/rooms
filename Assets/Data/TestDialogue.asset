@@ -96,11 +96,8 @@ MonoBehaviour:
   text: Have you seen anyone else around here?
   answers:
   - text: Yes
-    voiceClip: {fileID: 0}
   - text: No
-    voiceClip: {fileID: 0}
   - text: Why do you ask?
-    voiceClip: {fileID: 0}
 --- !u!114 &-3087430234048151600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +228,7 @@ MonoBehaviour:
   - {fileID: -3087430234048151600}
   - {fileID: -1654305995129309320}
   - {fileID: 8761705665595662308}
-  current: {fileID: -7237085100710200339}
+  current: {fileID: -1654305995129309320}
 --- !u!114 &2132071904534603120
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSelection : MonoBehaviour {
+public class PlayerSelection : MonoBehaviour
+{
 
     Transform currentTarget;
     bool interacting;
@@ -25,30 +26,38 @@ public class PlayerSelection : MonoBehaviour {
     [SerializeField]
     public List<InventoryItem> gameplayTags = new List<InventoryItem>();
 
-    [SerializeField]
     public UI uiReference;
+    public DialogueSystem dialogueSystemReference;
 
     [SerializeField]
     LayerMask layerMask;
 
-    void Start() {
+    void Start()
+    {
         larynx = GetComponent<AudioSource>();
     }
 
-    void Update() {
+    void Update()
+    {
 
         // cast rays to look for stuff
         RaycastHit hit;
-        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, interactDistance, layerMask)) {
+        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, interactDistance, layerMask))
+        {
 
-            if (!currentTarget) {
+            if (!currentTarget)
+            {
                 hit.transform.SendMessage("OnStartHover", this.transform, SendMessageOptions.DontRequireReceiver);
                 currentTarget = hit.transform;
-            } else {
+            }
+            else
+            {
 
-                if (hit.transform != currentTarget) {
+                if (hit.transform != currentTarget)
+                {
                     // Stop what we were doing
-                    if (interacting) {
+                    if (interacting)
+                    {
                         currentTarget.SendMessage("OnEndInteract", this.transform, SendMessageOptions.DontRequireReceiver);
                         interacting = false;
                     }
@@ -61,9 +70,13 @@ public class PlayerSelection : MonoBehaviour {
                 }
 
             }
-        } else {
-            if (currentTarget) {
-                if (interacting) {
+        }
+        else
+        {
+            if (currentTarget)
+            {
+                if (interacting)
+                {
                     currentTarget.SendMessage("OnEndInteract", this.transform, SendMessageOptions.DontRequireReceiver);
                     interacting = false;
                 }
@@ -73,16 +86,21 @@ public class PlayerSelection : MonoBehaviour {
         }
 
         // if a target is in out midst, we can interact with it
-        if (currentTarget) {
+        if (currentTarget)
+        {
 
-            if (!interacting) {
-                if (Input.GetButtonDown("Fire1")) {
+            if (!interacting)
+            {
+                if (Input.GetButtonDown("Fire1"))
+                {
                     currentTarget.SendMessage("OnStartInteract", this.transform, SendMessageOptions.DontRequireReceiver);
                     interacting = true;
                 }
             }
-            if (interacting) {
-                if (Input.GetButtonUp("Fire1")) {
+            if (interacting)
+            {
+                if (Input.GetButtonUp("Fire1"))
+                {
                     currentTarget.SendMessage("OnEndInteract", this.transform, SendMessageOptions.DontRequireReceiver);
                     interacting = false;
                 }
@@ -91,56 +109,75 @@ public class PlayerSelection : MonoBehaviour {
         }
     }
 
-    public void PushAudio(AudioClip audioClip, float volume = 1f) {
+    public void PushAudio(AudioClip audioClip, float volume = 1f)
+    {
         larynx.PlayOneShot(audioClip, volume);
     }
 
-    public bool TryItem(InventoryItem item) {
-        if (inventory.Contains(item)) {
+    public bool TryItem(InventoryItem item)
+    {
+        if (inventory.Contains(item))
+        {
             return true;
-        } else {
+        }
+        else
+        {
             return false;
         }
     }
 
-    public bool TryAddItem(InventoryItem item) {
-        if (!inventory.Contains(item)) {
+    public bool TryAddItem(InventoryItem item)
+    {
+        if (!inventory.Contains(item))
+        {
             inventory.Add(item);
             uiReference.PushMessage("Picked up " + item.name);
             return true;
-        } else {
+        }
+        else
+        {
             return false;
         }
     }
 
-    public bool TryRemoveItem(InventoryItem item) {
-        if (inventory.Contains(item)) {
+    public bool TryRemoveItem(InventoryItem item)
+    {
+        if (inventory.Contains(item))
+        {
             inventory.Remove(item);
             return true;
-        } else {
+        }
+        else
+        {
             return false;
         }
     }
 
-    public void PushObjective(string newObjective) {
+    public void PushObjective(string newObjective)
+    {
         currentObjective = newObjective;
-        if (objectiveCoroutine != null) {
+        if (objectiveCoroutine != null)
+        {
             StopCoroutine(objectiveCoroutine);
         }
 
         objectiveCoroutine = StartCoroutine(uiReference.PushObjective(newObjective));
     }
 
-    public void PushSubtitle(string newSubtitle) {
-        if (subtitleCoroutine != null) {
+    public void PushSubtitle(string newSubtitle)
+    {
+        if (subtitleCoroutine != null)
+        {
             StopCoroutine(subtitleCoroutine);
         }
 
         subtitleCoroutine = StartCoroutine(uiReference.PushSubtitle(newSubtitle));
     }
 
-    public void PushMessage(string newMessage) {
-        if (messageCoroutine != null) {
+    public void PushMessage(string newMessage)
+    {
+        if (messageCoroutine != null)
+        {
             StopCoroutine(messageCoroutine);
         }
 
@@ -148,15 +185,18 @@ public class PlayerSelection : MonoBehaviour {
     }
 
     // Force-Clear a prompt
-    public void ClearPrompt() {
+    public void ClearPrompt()
+    {
         uiReference.prompt.text = "";
     }
 
-    public void PushPrompt(string prompt) {
+    public void PushPrompt(string prompt)
+    {
         uiReference.prompt.text = prompt;
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit) {
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
         hit.gameObject.SendMessage("Bash", GetComponent<Player>(), SendMessageOptions.DontRequireReceiver);
     }
 
