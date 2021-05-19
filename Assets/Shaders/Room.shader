@@ -1,6 +1,6 @@
 // Made with Amplify Shader Editor
 // Available at the Unity Asset Store - http://u3d.as/y3X 
-Shader "Room"
+Shader "ThisFuneralHome/Room"
 {
 	Properties
 	{
@@ -168,7 +168,7 @@ Shader "Room"
 }
 /*ASEBEGIN
 Version=18800
-367;388;1104;631;298.1242;421.2928;1;True;True
+360;374;1224;645;769.2252;523.1311;1.389687;True;True
 Node;AmplifyShaderEditor.RangedFloatNode;10;-830.9882,-354.2989;Inherit;False;Property;_Tiling;Tiling;6;0;Create;True;0;0;0;False;0;False;0;0.2;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.ColorNode;4;-611,-91.5;Inherit;False;Property;_LightColor;Light Color;4;1;[HDR];Create;True;0;0;0;False;0;False;0,0,0,0;0,0.3126002,0.5754717,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.RangedFloatNode;7;-584.5208,163.2331;Inherit;False;Property;_Radiosity;Radiosity;5;0;Create;True;0;0;0;False;0;False;1;0;0;0;0;1;FLOAT;0
@@ -182,7 +182,7 @@ Node;AmplifyShaderEditor.SimpleMultiplyOpNode;9;-65.28815,-375.0988;Inherit;Fals
 Node;AmplifyShaderEditor.RangedFloatNode;13;16.87579,-181.2928;Inherit;False;Property;_Smoothness;Smoothness;7;0;Create;True;0;0;0;False;0;False;0;1;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;5;-72,-83.5;Inherit;False;2;2;0;FLOAT4;0,0,0,0;False;1;COLOR;0,0,0,0;False;1;FLOAT4;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;12;256.0087,-213.6185;Inherit;False;2;2;0;FLOAT4;0,0,0,0;False;1;FLOAT;0;False;1;FLOAT4;0
-Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;478.6819,-274.5622;Float;False;True;-1;2;ASEMaterialInspector;0;0;Standard;Room;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;Back;0;False;-1;0;False;-1;False;0;False;-1;0;False;-1;False;0;Opaque;0.5;True;True;0;False;Opaque;;Geometry;All;14;all;True;True;True;True;0;False;-1;False;0;False;-1;255;False;-1;255;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;False;2;15;10;25;False;0.5;True;0;0;False;-1;0;False;-1;0;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;Relative;0;;-1;-1;-1;-1;0;False;0;0;False;-1;-1;0;False;-1;0;0;0;False;0.1;False;-1;0;False;-1;False;16;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
+Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;478.6819,-274.5622;Float;False;True;-1;2;ASEMaterialInspector;0;0;Standard;ThisFuneralHome/Room;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;Back;0;False;-1;0;False;-1;False;0;False;-1;0;False;-1;False;0;Opaque;0.5;True;True;0;False;Opaque;;Geometry;All;14;all;True;True;True;True;0;False;-1;False;0;False;-1;255;False;-1;255;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;False;2;15;10;25;False;0.5;True;0;0;False;-1;0;False;-1;0;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;Relative;0;;-1;-1;-1;-1;0;False;0;0;False;-1;-1;0;False;-1;0;0;0;False;0.1;False;-1;0;False;-1;False;16;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
 WireConnection;11;0;10;0
 WireConnection;11;1;10;0
 WireConnection;6;0;4;0
@@ -200,4 +200,4 @@ WireConnection;0;0;9;0
 WireConnection;0;2;5;0
 WireConnection;0;4;12;0
 ASEEND*/
-//CHKSM=09AABEF1234455799355A5CA53CE38D7292C8CD1
+//CHKSM=E0F68517ABF7D0FA0B168E3C0AF4B516D221E83A
